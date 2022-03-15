@@ -5,16 +5,20 @@ import { AppComponent } from './app.component';
 import { BodyComponent } from './dashboard/body/body.component';
 import { SidenavComponent } from './dashboard/sidenav/sidenav.component';
 import { DashComponent } from './dashboard/dash/dash.component';
+import { AppRoutingModule } from './app-routing.module';
+import { RolesComponent } from './modules/roles/roles.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     BodyComponent,
     SidenavComponent,
-    DashComponent
+    DashComponent,
+    RolesComponent
   ],
   imports: [
-    BrowserModule
+    BrowserModule,
+    AppRoutingModule
   ],
   providers: [],
   bootstrap: [AppComponent]
