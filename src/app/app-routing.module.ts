@@ -1,3 +1,4 @@
+import { RolesComponent } from './modules/roles/roles.component';
 import { BodyComponent } from './dashboard/body/body.component';
 import { SidenavComponent } from './dashboard/sidenav/sidenav.component';
 import { NgModule } from '@angular/core';
@@ -11,8 +12,8 @@ const routes: Routes = [
     redirectTo:"/dashboard",
     pathMatch:"full",
   },
-  { path: 'sidenav', component: SidenavComponent },
-  { path: 'body', component: BodyComponent }
+  { path: 'dashboard', component: DashComponent },
+  { path: 'roles', component: RolesComponent }
 ]
 
 @NgModule({

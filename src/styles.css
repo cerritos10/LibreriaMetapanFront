@@ -11,3 +11,24 @@ body{
     position: relative;
     font-family: 'Poppins', sans-serif;
 }
+
+.card{
+    display: flex;
+    flex-direction: column;
+    border-radius: .5rem;
+    background-color: #121121;
+    color: #fff;
+    margin: 1.25rem 0 1.25rem 0;
+    box-shadow: 0 .25rem .5rem #0e0281;
+}
+
+.card-head{
+    padding: 1rem 1.5rem;
+    border: 1px solid #0e0281;
+    font-size: 1rem;
+    font-weight: 600;
+}
+
+.card-body{
+    padding: 1rem 1.5rem;
+}
