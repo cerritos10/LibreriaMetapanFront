@@ -7,6 +7,10 @@ import { SidenavComponent } from './dashboard/sidenav/sidenav.component';
 import { DashComponent } from './dashboard/dash/dash.component';
 import { AppRoutingModule } from './app-routing.module';
 import { RolesComponent } from './modules/roles/roles.component';
+import { CategoriasComponent } from './modules/categorias/categorias.component';
+import { FormsModule } from '@angular/forms';
+import { HttpClientModule } from '@angular/common/http';
+import { ConfcategoriaComponent } from './modules/categorias/confcategoria/confcategoria.component';
 
 @NgModule({
   declarations: [
@@ -14,11 +18,15 @@ import { RolesComponent } from './modules/roles/roles.component';
     BodyComponent,
     SidenavComponent,
     DashComponent,
-    RolesComponent
+    RolesComponent,
+    CategoriasComponent,
+    ConfcategoriaComponent
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
+    FormsModule,
+    HttpClientModule
   ],
   providers: [],
   bootstrap: [AppComponent]

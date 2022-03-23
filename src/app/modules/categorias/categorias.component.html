@@ -1,0 +1,25 @@
+<h1> Categorias </h1>
+<div class="card">
+    <div class="card-body">
+        <form>
+          <input type="text" [(ngModel)]="categoria" name="categoria">
+          <button (click)="insertCate()"> Ingresar </button>
+        </form>
+        <table>
+          <thead>
+            <tr>
+              <th> ID </th>
+              <th> Categorias</th>
+          </tr>
+          </thead>
+          <tbody>
+            <tr *ngFor = "let categoria of categorias">
+              <td> {{categoria.id_categoria}} </td>
+              <td> {{categoria.nombre_categoria}} </td>
+              <td> <ul> <li [routerLink]="['/categorias/configuracion', categoria.id_categoria]"> Detalle </li></ul></td>
+            </tr>
+          </tbody>
+        </table>
+    </div>
+</div>
+

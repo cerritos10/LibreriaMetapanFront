@@ -1,4 +1,6 @@
+import { ConfcategoriaComponent } from './modules/categorias/confcategoria/confcategoria.component';
 import { RolesComponent } from './modules/roles/roles.component';
+import { CategoriasComponent } from './modules/categorias/categorias.component';
 import { BodyComponent } from './dashboard/body/body.component';
 import { SidenavComponent } from './dashboard/sidenav/sidenav.component';
 import { NgModule } from '@angular/core';
@@ -13,7 +15,9 @@ const routes: Routes = [
     pathMatch:"full",
   },
   { path: 'dashboard', component: DashComponent },
-  { path: 'roles', component: RolesComponent }
+  { path: 'roles', component: RolesComponent },
+  { path: 'categorias', component: CategoriasComponent },
+  { path: 'categorias/configuracion/:id_categoria', component: ConfcategoriaComponent}
 ]
 
 @NgModule({
