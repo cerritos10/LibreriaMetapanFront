@@ -11,6 +11,8 @@ import { CategoriasComponent } from './modules/categorias/categorias.component';
 import { FormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
 import { ConfcategoriaComponent } from './modules/categorias/confcategoria/confcategoria.component';
+import { MarcaComponent } from './modules/marca/marca.component';
+import { ConfmarcasComponent } from './modules/marca/confmarcas/confmarcas.component';
 
 @NgModule({
   declarations: [
@@ -20,7 +22,9 @@ import { ConfcategoriaComponent } from './modules/categorias/confcategoria/confc
     DashComponent,
     RolesComponent,
     CategoriasComponent,
-    ConfcategoriaComponent
+    ConfcategoriaComponent,
+    MarcaComponent,
+    ConfmarcasComponent
   ],
   imports: [
     BrowserModule,

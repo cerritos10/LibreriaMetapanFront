@@ -1,0 +1,10 @@
+<h1> Marcas </h1>
+<div class="card">
+    <div class="card-body" *ngFor = "let marca of marcas">
+        <form>
+          <input type="text" [(ngModel)]="marca.nombre_marca" name="marca">
+          <button (click)="editMar()"> Editar </button>
+          <button (click)="deleteMar()"> Eliminar </button>
+        </form>
+    </div>
+</div>

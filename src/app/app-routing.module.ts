@@ -1,3 +1,5 @@
+import { ConfmarcasComponent } from './modules/marca/confmarcas/confmarcas.component';
+import { MarcaComponent } from './modules/marca/marca.component';
 import { ConfcategoriaComponent } from './modules/categorias/confcategoria/confcategoria.component';
 import { RolesComponent } from './modules/roles/roles.component';
 import { CategoriasComponent } from './modules/categorias/categorias.component';
@@ -17,7 +19,9 @@ const routes: Routes = [
   { path: 'dashboard', component: DashComponent },
   { path: 'roles', component: RolesComponent },
   { path: 'categorias', component: CategoriasComponent },
-  { path: 'categorias/configuracion/:id_categoria', component: ConfcategoriaComponent}
+  { path: 'categorias/configuracion/:id_categoria', component: ConfcategoriaComponent},
+  { path: 'marcas', component: MarcaComponent },
+  { path: 'marcas/configuracion/:id_marca', component: ConfmarcasComponent }
 ]
 
 @NgModule({

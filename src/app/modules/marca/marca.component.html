@@ -1,0 +1,24 @@
+<h1> Marcas </h1>
+<div class="card">
+    <div class="card-body">
+        <form>
+          <input type="text" [(ngModel)]="marca" name="marca">
+          <button (click)="insertMarc()"> Ingresar </button>
+        </form>
+        <table>
+          <thead>
+            <tr>
+              <th> ID </th>
+              <th> Marca </th>
+          </tr>
+          </thead>
+          <tbody>
+            <tr *ngFor = "let marca of marcas">
+              <td> {{marca.id_marca}} </td>
+              <td> {{marca.nombre_marca}} </td>
+              <td> <ul> <li [routerLink]="['/marcas/configuracion', marca.id_marca]"> Detalle </li></ul></td>
+            </tr>
+          </tbody>
+        </table>
+    </div>
+</div>
