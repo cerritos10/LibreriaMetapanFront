@@ -13,6 +13,8 @@ import { HttpClientModule } from '@angular/common/http';
 import { ConfcategoriaComponent } from './modules/categorias/confcategoria/confcategoria.component';
 import { MarcaComponent } from './modules/marca/marca.component';
 import { ConfmarcasComponent } from './modules/marca/confmarcas/confmarcas.component';
+import { ClientesComponent } from './modules/clientes/clientes.component';
+import { ConfclienteComponent } from './modules/clientes/confcliente/confcliente.component';
 
 @NgModule({
   declarations: [
@@ -24,7 +26,9 @@ import { ConfmarcasComponent } from './modules/marca/confmarcas/confmarcas.compo
     CategoriasComponent,
     ConfcategoriaComponent,
     MarcaComponent,
-    ConfmarcasComponent
+    ConfmarcasComponent,
+    ClientesComponent,
+    ConfclienteComponent
   ],
   imports: [
     BrowserModule,

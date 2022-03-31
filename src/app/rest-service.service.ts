@@ -51,4 +51,29 @@ export class RestServiceService {
   public deleteMarcas(id){
     return this.http.delete(this.URL + 'marcas/'+ id);
   }
+
+  //Clientes
+  public getCliente(id){
+    return this.http.get(this.URL + 'clientes/' + id);
+  }
+
+  public getClientesAll()
+  {
+    return this.http.get(this.URL + 'clientes/');
+  }
+
+  public postClientes(data)
+  {
+    return this.http.post(this.URL + 'clientes/', data);
+  }
+
+  public putClientes(data, id)
+  {
+    return this.http.put(this.URL + 'clientes/' + id, data);
+  }
+
+  public deleteClientes(id)
+  {
+    return this.http.delete(this.URL + 'clientes/' + id);
+  }
 }
