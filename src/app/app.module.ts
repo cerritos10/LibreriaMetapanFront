@@ -16,6 +16,7 @@ import { ConfmarcasComponent } from './modules/marca/confmarcas/confmarcas.compo
 import { ClientesComponent } from './modules/clientes/clientes.component';
 import { ConfclienteComponent } from './modules/clientes/confcliente/confcliente.component';
 import { ViewComponent } from './dashboard/view/view.component';
+import { PageNotFoundComponent } from './page-not-found/page-not-found.component';
 
 @NgModule({
   declarations: [
@@ -30,7 +31,8 @@ import { ViewComponent } from './dashboard/view/view.component';
     ConfmarcasComponent,
     ClientesComponent,
     ConfclienteComponent,
-    ViewComponent
+    ViewComponent,
+    PageNotFoundComponent
   ],
   imports: [
     BrowserModule,

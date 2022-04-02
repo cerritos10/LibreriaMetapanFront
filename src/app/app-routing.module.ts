@@ -1,3 +1,4 @@
+import { PageNotFoundComponent } from './page-not-found/page-not-found.component';
 import { ViewComponent } from './dashboard/view/view.component';
 import { ConfmarcasComponent } from './modules/marca/confmarcas/confmarcas.component';
 import { MarcaComponent } from './modules/marca/marca.component';
@@ -15,22 +16,24 @@ import { ConfclienteComponent } from './modules/clientes/confcliente/confcliente
 
 const routes: Routes = [
   {
-    path:"",
+    path:"dashhh",
     redirectTo:"/dashboard",
     pathMatch:"full",
   },
-  {path:'', component: ViewComponent,
-  children: [
-    { path: 'dashboard', component: DashComponent },
-    { path: 'roles', component: RolesComponent },
-    { path: 'categorias', component: CategoriasComponent },
-    { path: 'categorias/configuracion/:id_categoria', component: ConfcategoriaComponent},
-    { path: 'marcas', component: MarcaComponent },
-    { path: 'marcas/configuracion/:id_marca', component: ConfmarcasComponent },
-    { path: 'clientes', component: ClientesComponent },
-    { path: 'clientes/configuracion/:id_cliente', component: ConfclienteComponent }
-  ]  
-}
+  {
+    path:'home', component: ViewComponent,
+    children: [
+      { path: 'dashboard', component: DashComponent },
+      { path: 'roles', component: RolesComponent },
+      { path: 'categorias', component: CategoriasComponent },
+      { path: 'categorias/configuracion/:id_categoria', component: ConfcategoriaComponent},
+      { path: 'marcas', component: MarcaComponent },
+      { path: 'marcas/configuracion/:id_marca', component: ConfmarcasComponent },
+      { path: '**', pathMatch: 'full',  component: ClientesComponent },
+      { path: 'clientes/configuracion/:id_cliente', component: ConfclienteComponent }
+    ]  
+  },
+  { path: '**', pathMatch: 'full',  component: PageNotFoundComponent },
 ]
 
 @NgModule({
