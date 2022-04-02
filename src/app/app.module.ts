@@ -17,6 +17,7 @@ import { ClientesComponent } from './modules/clientes/clientes.component';
 import { ConfclienteComponent } from './modules/clientes/confcliente/confcliente.component';
 import { ViewComponent } from './dashboard/view/view.component';
 import { PageNotFoundComponent } from './page-not-found/page-not-found.component';
+import { ConfiRolesComponent } from './modules/roles/confi-roles/confi-roles.component';
 
 @NgModule({
   declarations: [
@@ -32,7 +33,8 @@ import { PageNotFoundComponent } from './page-not-found/page-not-found.component
     ClientesComponent,
     ConfclienteComponent,
     ViewComponent,
-    PageNotFoundComponent
+    PageNotFoundComponent,
+    ConfiRolesComponent
   ],
   imports: [
     BrowserModule,

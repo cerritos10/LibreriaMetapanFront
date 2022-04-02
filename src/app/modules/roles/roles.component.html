@@ -1,10 +1,41 @@
-<h1>Roles</h1>
 <div class="card">
-    <!-- <div class="card-head">
-        What is Lorem Ipsum?
-    </div> -->
+    <h1 class="title"> Roles de usuario </h1>
     <div class="card-body">
-        Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. 
+        <form>
+            <div class="row">
+                <div class="col-md-4">
+                    <input type="text" class="color form-control" placeholder="Insertar Rol" [(ngModel)]="role" name="rol">
+                    <button type="button" (click)="insertRol()">
+                        <span></span>
+                        <span></span>
+                        <span></span>
+                        <span></span>
+                        Guardar
+                    </button>
+                </div>
+            </div>
+        </form>
+        
+        <table class="table table-dark table-striped">
+            <thead>
+                <tr>
+                    <th scope="col"> ID </th>
+                    <th scope="col"> Rol de usuario </th>
+                    <th scope="col"> Acciones</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr *ngFor="let rol of roles">
+                    <td WIDTH="80"> {{rol.id_tipousuario}} </td>
+                    <td WIDTH="150"> {{rol.rol}} </td>
+                    <td>
+                        <ul>
+                            <li class="fas fa-trash-alt icons" [routerLink]="['/home/roles/configuracion', rol.id_tipousuario]"> </li>
+                            <li class="fas fa-edit" [routerLink]="['/home/roles/configuracion', rol.id_tipousuario]"> </li>
+                        </ul>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
     </div>
 </div>
-

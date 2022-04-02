@@ -10,6 +10,28 @@ export class RestServiceService {
 
   URL = 'http://127.0.0.1:3000/api/'
 
+  //Roles
+  public getRol(id){
+    return this.http.get(this.URL + 'roles/' + id);
+  }
+
+  public getAllRoles(){
+    return this.http.get(this.URL + 'roles/');
+  }
+
+  public postRoles(data){
+    return this.http.post(this.URL + 'roles/', data);
+  }
+
+  public putRoles(data, id){
+    return this.http.put(this.URL + 'roles/' + id, data);
+  }
+
+  public deleteRoles(id){
+    return this.http.delete(this.URL + 'roles/'+ id);
+  }
+
+
   ///Categorias
   public getCategoria(id){
     return this.http.get(this.URL + 'categorias/' + id);

@@ -1,0 +1,26 @@
+<div class="card">
+    <h1 class="title"> Roles </h1>
+    <div class="card-body" *ngFor = "let rol of roles">
+        <form>
+            <div class="row">
+                <div class="col-md-4">
+                    <input type="text" class="color form-control" [(ngModel)]="rol.rol" name="rol"><br><br>
+                    <button type="button" (click)="editRol()">
+                        <span></span>
+                        <span></span>
+                        <span></span>
+                        <span></span>
+                        Editar
+                    </button>
+                    <button type="button" (click)="deleteRol()">
+                        <span></span>
+                        <span></span>
+                        <span></span>
+                        <span></span>
+                        Eliminar
+                    </button>
+                </div>
+            </div>          
+        </form>
+    </div>
+</div>
