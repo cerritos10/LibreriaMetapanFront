@@ -15,6 +15,7 @@ import { MarcaComponent } from './modules/marca/marca.component';
 import { ConfmarcasComponent } from './modules/marca/confmarcas/confmarcas.component';
 import { ClientesComponent } from './modules/clientes/clientes.component';
 import { ConfclienteComponent } from './modules/clientes/confcliente/confcliente.component';
+import { ViewComponent } from './dashboard/view/view.component';
 
 @NgModule({
   declarations: [
@@ -28,7 +29,8 @@ import { ConfclienteComponent } from './modules/clientes/confcliente/confcliente
     MarcaComponent,
     ConfmarcasComponent,
     ClientesComponent,
-    ConfclienteComponent
+    ConfclienteComponent,
+    ViewComponent
   ],
   imports: [
     BrowserModule,
