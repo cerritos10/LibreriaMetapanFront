@@ -1,5 +1,5 @@
 <div class="card">
-    <h1 class="title"> Roles de usuario </h1>
+    <h2 class="title"> Ingresar un nuevo rol de usuario </h2>
     <div class="card-body">
         <form>
             <div class="row">
@@ -15,27 +15,34 @@
                 </div>
             </div>
         </form>
-        
-        <table class="table table-dark table-striped">
-            <thead>
-                <tr>
-                    <th scope="col"> ID </th>
-                    <th scope="col"> Rol de usuario </th>
-                    <th scope="col"> Acciones</th>
-                </tr>
-            </thead>
-            <tbody>
-                <tr *ngFor="let rol of roles">
-                    <td WIDTH="80"> {{rol.id_tipousuario}} </td>
-                    <td WIDTH="150"> {{rol.rol}} </td>
-                    <td>
-                        <ul>
-                            <li class="fas fa-trash-alt icons" [routerLink]="['/home/roles/configuracion', rol.id_tipousuario]"> </li>
-                            <li class="fas fa-edit" [routerLink]="['/home/roles/configuracion', rol.id_tipousuario]"> </li>
-                        </ul>
-                    </td>
-                </tr>
-            </tbody>
-        </table>
+    </div>
+</div>
+
+<div class="card">
+    <h2 class="title"> Lista de roles de usuario </h2>
+    <div class="card-body">
+        <div class="tamaño-table">
+            <table class="table table-dark table-striped">
+                <thead>
+                    <tr>
+                        <th scope="col"> ID </th>
+                        <th scope="col"> Rol de usuario </th>
+                        <th scope="col"> Acciones</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr *ngFor="let rol of roles">
+                        <td WIDTH="80"> {{rol.id_tipousuario}} </td>
+                        <td WIDTH="150"> {{rol.rol}} </td>
+                        <td>
+                            <ul>
+                                <li class="fas fa-trash-alt icons" [routerLink]="['/home/roles/configuracion', rol.id_tipousuario]"> </li>
+                                <li class="fas fa-edit" [routerLink]="['/home/roles/configuracion', rol.id_tipousuario]"> </li>
+                            </ul>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
     </div>
 </div>
