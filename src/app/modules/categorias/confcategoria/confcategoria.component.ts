@@ -5,7 +5,7 @@ import { RestServiceService } from 'src/app/rest-service.service';
 @Component({
   selector: 'app-confcategoria',
   templateUrl: './confcategoria.component.html',
-  styleUrls: ['./confcategoria.component.css']
+  styleUrls: ['./confcategoria.component.css', '../../../../assets/css/forms.css']
 })
 export class ConfcategoriaComponent implements OnInit {
 
@@ -32,14 +32,14 @@ export class ConfcategoriaComponent implements OnInit {
     };
     this.restService.putCategorias(cate, this.elId).subscribe(data=>{
       console.log(data['Message']);
-      this.router.navigate(['/categorias']);
+      this.router.navigate(['/home/categorias']);
     })
   }
 
   eliminarCate(){
     this.restService.deleteCategorias(this.elId).subscribe(data=>{
       console.log(data['Status']);
-      this.router.navigate(['/categorias']);
+      this.router.navigate(['/home/categorias']);
     })
   }
 

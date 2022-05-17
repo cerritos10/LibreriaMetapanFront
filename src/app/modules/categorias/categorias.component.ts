@@ -4,7 +4,7 @@ import { RestServiceService } from 'src/app/rest-service.service';
 @Component({
   selector: 'app-categorias',
   templateUrl: './categorias.component.html',
-  styleUrls: ['./categorias.component.css']
+  styleUrls: ['./categorias.component.css', '../../../assets/css/forms.css']
 })
 export class CategoriasComponent implements OnInit {
 
