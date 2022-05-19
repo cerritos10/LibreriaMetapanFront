@@ -5,7 +5,7 @@ import { RestServiceService } from 'src/app/rest-service.service';
 @Component({
   selector: 'app-confcliente',
   templateUrl: './confcliente.component.html',
-  styleUrls: ['./confcliente.component.css']
+  styleUrls: ['./confcliente.component.css', '../../../../assets/css/forms.css']
 })
 export class ConfclienteComponent implements OnInit {
 

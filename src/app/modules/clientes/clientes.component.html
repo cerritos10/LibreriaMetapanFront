@@ -2,14 +2,30 @@
 <div class="card">
     <div class="card-body">
         <form>
+            <h5>Nombre del Cliente</h5>
             <input type="text" [(ngModel)]="cliente" name="nombre">
             <br>
+            <br>
+            <h5>Telefono del Cliente</h5>
             <input type="text" [(ngModel)]="telefono" name="telefono">
+            <br>
             <br>
             <!--
                 Aqui agregare otro tipo de componente como un radio button o un combo
             -->
+           <!--
+            <mat-form-field appearance="fill">
+                <mat-label>Sexo del Cliente</mat-label>
+                <mat-select>
+                  <mat-option *ngFor="let sexclient of sexClients" [value]="sexclient.value">
+                    {{sexclient.viewValue}}
+                </mat-option>
+                </mat-select>
+            </mat-form-field>
+            -->
+            <h5>Sexo del Cliente</h5>
             <input type="text" [(ngModel)]="sexo" name="sexo">
+            <br>
             <br>
             <button (click)="addClient()"> Agregar Cliente </button>
         </form>
@@ -28,7 +44,7 @@
                 <td> {{cliente.nombre}} </td>
                 <td> {{cliente.telefono}} </td>
                 <td> {{cliente.sexo}} </td>
-                <td> <ul> <li [routerLink]="['/clientes/configuracion', cliente.id_cliente]"> Detalle </li></ul></td>
+                <td> <ul> <li [routerLink]="['/home/clientes/configuracion', cliente.id_cliente]"> Detalle </li></ul></td>
             </tr>
         </tbody>
         </table>

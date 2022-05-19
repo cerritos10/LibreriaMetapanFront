@@ -19,4 +19,9 @@ export const navbarData = [
         icon: 'fas fa-copyright',
         label: 'Marcas'
     },
+    {
+        routeLink: 'clientes',
+        icon: 'fas fa-user',
+        label: 'Clientes'
+    },
 ];
