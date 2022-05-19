@@ -5,7 +5,7 @@ import { RestServiceService } from 'src/app/rest-service.service';
 @Component({
   selector: 'app-confmarcas',
   templateUrl: './confmarcas.component.html',
-  styleUrls: ['./confmarcas.component.css']
+  styleUrls: ['./confmarcas.component.css', '../../../../assets/css/forms.css']
 })
 export class ConfmarcasComponent implements OnInit {
 
@@ -32,14 +32,14 @@ export class ConfmarcasComponent implements OnInit {
     };
     this.restService.putMarcas(marc, this.elId).subscribe(data=>{
       console.log(data['Message']);
-      this.router.navigate(['/marcas']);
+      this.router.navigate(['/home/marcas']);
     })
   }
 
   deleteMar(){
     this.restService.deleteMarcas(this.elId).subscribe(data=>{
       console.log(data['Status']);
-      this.router.navigate(['/marcas']);
+      this.router.navigate(['/home/marcas']);
     })
   }
 

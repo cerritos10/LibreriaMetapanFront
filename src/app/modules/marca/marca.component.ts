@@ -4,7 +4,7 @@ import { RestServiceService } from 'src/app/rest-service.service';
 @Component({
   selector: 'app-marca',
   templateUrl: './marca.component.html',
-  styleUrls: ['./marca.component.css']
+  styleUrls: ['./marca.component.css', '../../../assets/css/forms.css']
 })
 export class MarcaComponent implements OnInit {
 
