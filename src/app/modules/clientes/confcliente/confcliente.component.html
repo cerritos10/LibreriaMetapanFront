@@ -1,18 +1,33 @@
-<h1> Clientes </h1>
 <div class="card">
+    <h1 class="title"> Clientes </h1>
     <div class="card-body" *ngFor = "let cliente of clientes">
         <form>
-            <input type="text" [(ngModel)]="cliente.nombre" name="nombre">
-            <br>
-            <input type="text" [(ngModel)]="cliente.telefono" name="telefono">
-            <br>
-            <!--
-                Aqui agregare otro tipo de componente como un radio button o un combo
-            -->
-            <input type="text" [(ngModel)]="cliente.sexo" name="sexo">
-            
-            <button (click)="editCliente()"> Editar </button>
-            <button (click)="deleteClient()"> Eliminar </button>
+            <div class="row">
+                <div class="col-md-6">
+                    <input class="form-control" type="text" [(ngModel)]="cliente.nombre" name="nombre">
+                    <br>
+                    <input class="form-control" [(ngModel)]="cliente.telefono" name="telefono">
+                    <br>
+                    <select class="form-select form-control" [(ngModel)]="cliente.sexo" name="sexo">
+                        <option value="Masculino">Masculino</option>
+                        <option value="Femenino">Femenino</option>
+                    </select>
+                    <button type="button" (click)="editCliente()">
+                        <span></span>
+                        <span></span>
+                        <span></span>
+                        <span></span>
+                        Editar 
+                    </button>
+                    <button type="button" (click)="deleteClient()"> 
+                        <span></span>
+                        <span></span>
+                        <span></span>
+                        <span></span>
+                        Eliminar 
+                    </button>
+                </div>
+            </div>
         </form>
     </div>
 </div>

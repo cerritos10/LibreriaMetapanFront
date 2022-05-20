@@ -39,14 +39,14 @@ export class ConfclienteComponent implements OnInit {
     }
     this.restService.putClientes(client, this.clID).subscribe(data => {
       console.log(data['Message']);
-      this.router.navigate(['/clientes']);
+      this.router.navigate(['/home/clientes']);
     })
   }
 
   deleteClient(){
     this.restService.deleteClientes(this.clID).subscribe(data =>{
       console.log(data['status']);
-      this.router.navigate(['/clientes']);
+      this.router.navigate(['/home/clientes']);
     })
   }
 }

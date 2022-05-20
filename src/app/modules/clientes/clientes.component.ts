@@ -1,10 +1,7 @@
 import { trigger } from '@angular/animations';
 import { Component, OnInit } from '@angular/core';
 import { RestServiceService } from 'src/app/rest-service.service';
-interface Sex {
-  value: string;
-  viewValue: string;
-}
+
 @Component({
   selector: 'app-clientes',
   templateUrl: './clientes.component.html',
@@ -33,12 +30,6 @@ export class ClientesComponent implements OnInit {
       console.log(data);
     })
   }
-
-  //Select
-  sexClients: Sex[] = [
-    {value: 'Masculino', viewValue: 'Masculino'},
-    {value: 'Femenino', viewValue: 'Femenino'},
-  ];
 
   addClient()
   {
