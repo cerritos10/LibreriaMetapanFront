@@ -33,7 +33,7 @@
                     <th scope="col"> Nombre </th>
                     <th scope="col"> Telefono </th>
                     <th scope="col"> Sexo </th>
-                    <th scope="col"></th>
+                    <th scope="col">Acciones</th>
                 </tr>
             </thead>
             <tbody>
@@ -44,7 +44,7 @@
                     <td WIDTH="350"> {{cliente.sexo}} </td>
                     <td WIDTH="350"> 
                         <ul> 
-                            <li class="fas fa-edit" [routerLink]="['/home/clientes/configuracion', cliente.id_cliente]"> Detalle </li>
+                            <li class="fas fa-edit" [routerLink]="['/home/clientes/configuracion', cliente.id_cliente]"></li>
                         </ul>
                     </td>
                 </tr>

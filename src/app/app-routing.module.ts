@@ -17,8 +17,8 @@ import { ConfclienteComponent } from './modules/clientes/confcliente/confcliente
 
 const routes: Routes = [
   {
-    path:"dashhh",
-    redirectTo:"/dashboard",
+    path:"",
+    redirectTo:"home",
     pathMatch:"full",
   },
   {
