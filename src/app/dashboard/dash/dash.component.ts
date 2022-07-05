@@ -1,4 +1,7 @@
+import { GraphicsService } from './../../services/graphics.service';
 import { Component, OnInit } from '@angular/core';
+import { Chart, registerables } from 'chart.js';
+
 
 @Component({
   selector: 'app-dash',
@@ -7,9 +10,121 @@ import { Component, OnInit } from '@angular/core';
 })
 export class DashComponent implements OnInit {
 
-  constructor() { }
+  mas = null;
 
-  ngOnInit(): void {
+  public canvas: any;
+  public canvas2: any;
+  public ctx;
+  public myChartDataMas;
+  public myChartDataMenos;
+
+  constructor(private restService: GraphicsService) {
+    Chart.register(...registerables)
   }
 
+  ngOnInit(): void {
+    // var path = 'grafStock/menos'
+    // this.restService.Stock(path).subscribe(data => {
+    //   this.mas = data['data'];
+    //   console.log(data);
+    // });
+    this.graficaStock('grafStock/mas','grafStockMas');
+    this.graficaStock('grafStock/menos','grafStockMenos');
+    // this.grafColors();
+  }
+
+  grafColors(){
+    this.canvas = document.getElementById('grafColors');
+    this.ctx = this.canvas.getContext("2d");
+    const myChart = new Chart(this.ctx, {
+    type: 'bar',
+    data: {
+        labels: ['Red', 'Blue', 'Yellow', 'Green', 'Purple', 'Orange'],
+        datasets: [{
+            label: '# of Votes',
+            data: [12, 19, 3, 5, 2, 3],
+            backgroundColor: [
+                'rgba(255, 99, 132, 0.2)',
+                'rgba(54, 162, 235, 0.2)',
+                'rgba(255, 206, 86, 0.2)',
+                'rgba(75, 192, 192, 0.2)',
+                'rgba(153, 102, 255, 0.2)',
+                'rgba(255, 159, 64, 0.2)'
+            ],
+            borderColor: [
+                'rgba(255, 99, 132, 1)',
+                'rgba(54, 162, 235, 1)',
+                'rgba(255, 206, 86, 1)',
+                'rgba(75, 192, 192, 1)',
+                'rgba(153, 102, 255, 1)',
+                'rgba(255, 159, 64, 1)'
+            ],
+            borderWidth: 1
+        }]
+    },
+    options: {
+        scales: {
+            y: {
+                beginAtZero: true
+            }
+        }
+    }
+});
+  }
+
+  graficaStock(path, elementID ) {
+    this.restService.Stock(path).subscribe(data => {
+      this.mas = data['data'];
+      console.log(data);
+    var gradientBarChartConfiguration: any = {
+      maintainAspectRatio: false,
+      legend: {
+        display: false
+      },
+      tooltips: {
+        backgroundColor: '#f5f5f5',
+        titleFontColor: '#333',
+        bodyFontColor: '#666',
+        bodySpacing: 4,
+        xPadding: 12,
+        mode: "nearest",
+        intersect: 0,
+        position: "nearest"
+      },
+      responsive: true,
+    };
+
+    this.canvas = document.getElementById(elementID);
+    this.ctx = this.canvas.getContext("2d");
+    var gradientStroke = this.ctx.createLinearGradient(0, 230, 0, 50);
+
+    gradientStroke.addColorStop(1, 'rgba(29,140,248,0.2)');
+    gradientStroke.addColorStop(0.4, 'rgba(29,140,248,0.0)');
+    gradientStroke.addColorStop(0, 'rgba(29,140,248,0)'); //blue colors
+
+      var labels = data['data'].map(function (e) {
+        return e.nombre_producto + ' ' + e.descripcion;
+      });
+
+      var cant = data['data'].map(function (e) {
+        return e.stock;
+      });
+
+      this.myChartDataMas = new Chart(this.ctx, {
+        type: 'bar',
+        data: {
+          labels: labels,
+          datasets: [{
+            label: 'Productos',
+            data: cant,
+            backgroundColor: gradientStroke,
+            hoverBackgroundColor: gradientStroke,
+            borderColor: '#1f8ef1',
+            borderWidth: 1
+          }]
+        },
+        options: gradientBarChartConfiguration
+      });
+    });
+  }
 }
