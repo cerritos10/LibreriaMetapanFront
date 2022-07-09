@@ -18,6 +18,8 @@ import { ConfclienteComponent } from './modules/clientes/confcliente/confcliente
 import { ViewComponent } from './dashboard/view/view.component';
 import { PageNotFoundComponent } from './page-not-found/page-not-found.component';
 import { ConfiRolesComponent } from './modules/roles/confi-roles/confi-roles.component';
+import { ProductosComponent } from './modules/productos/productos.component';
+import { ConfproductoComponent } from './modules/productos/confproducto/confproducto.component';
 
 @NgModule({
   declarations: [
@@ -34,7 +36,9 @@ import { ConfiRolesComponent } from './modules/roles/confi-roles/confi-roles.com
     ConfclienteComponent,
     ViewComponent,
     PageNotFoundComponent,
-    ConfiRolesComponent
+    ConfiRolesComponent,
+    ProductosComponent,
+    ConfproductoComponent
   ],
   imports: [
     BrowserModule,

@@ -1,0 +1,63 @@
+<div class="card">
+  <h1 class="title">Productos</h1>
+      <div class="card-body" *ngFor = "let producto of productos">
+          <form>
+            <div class="row">
+              <div class="col-md-4">
+                <h5>Nombre</h5>
+                <input class="color form-control" type="text" [(ngModel)]="producto.nombre_producto" placeholder="Insertar el nombre del producto" name="nombre_producto">
+              </div>
+              <div class="col-md-4">
+                <h5>Categoria</h5>
+                <select class="form-select form-control" [(ngModel)]="producto.id_categoria" name="categoria">
+                    <option *ngFor = "let categoria of categorias" value="{{categoria.id_categoria}}"> {{categoria.nombre_categoria}}</option>
+                </select>
+              </div>
+              <div class="col-md-4">
+                <h5>Marcas</h5>
+                <select class="form-select form-control" [(ngModel)]="producto.id_marca" name="marca">
+                    <option *ngFor = "let marca of marcas" value="{{marca.id_marca}}"> {{marca.nombre_marca}}</option>
+                </select>
+              </div>
+            </div><h6></h6>
+            <div class="row">
+              <div class="col-md-4">
+                <h5>Descripcion </h5>
+                <input class="color form-control" type="text" placeholder="Inserte una descripcion" [(ngModel)]="producto.descripcion" name="descripcion">
+              </div>
+              <div class="col-md-4">
+                <h5> Stock </h5>
+                <input class="color form-control" type="text" placeholder="Debe insertar un stock inicial" [(ngModel)]="producto.stock" name="stock">
+              </div>
+              <div class="col-md-4">
+                <h5> Precio de Venta </h5>
+                <input class="color form-control" type="text" placeholder="Inserte el precio de venta" [(ngModel)]="producto.precio_venta" name="precio_venta">
+              </div>
+            </div><h6></h6>
+            <div class="row">
+              <div class="col-md-4">
+                <h6></h6><h5> Precio de descuento </h5>
+                <input class="color form-control" type="text" placeholder="Inserte el precio de descuento" [(ngModel)]="producto.precio_descuento" name="precio_descuento">
+              </div>
+            </div><h6></h6>
+            <div class="row">
+              <div class="col-md-4">
+                <button type="button" (click)="editProd()">
+                  <span></span>
+                  <span></span>
+                  <span></span>
+                  <span></span>
+                  Editar
+                </button>
+                <button type="button" (click)="eliminarProd()">
+                  <span></span>
+                  <span></span>
+                  <span></span>
+                  <span></span>
+                  Eliminar
+                </button>
+              </div>
+            </div><h6></h6>
+          </form>
+      </div>
+</div>

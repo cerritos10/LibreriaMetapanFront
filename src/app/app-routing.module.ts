@@ -1,3 +1,5 @@
+import { ConfproductoComponent } from './modules/productos/confproducto/confproducto.component';
+import { ProductosComponent } from './modules/productos/productos.component';
 import { ConfiRolesComponent } from './modules/roles/confi-roles/confi-roles.component';
 import { PageNotFoundComponent } from './page-not-found/page-not-found.component';
 import { ViewComponent } from './dashboard/view/view.component';
@@ -32,8 +34,10 @@ const routes: Routes = [
       { path: 'marcas', component: MarcaComponent },
       { path: 'marcas/configuracion/:id_marca', component: ConfmarcasComponent },
       { path: 'clientes', pathMatch: 'full',  component: ClientesComponent },
-      { path: 'clientes/configuracion/:id_cliente', component: ConfclienteComponent }
-    ]  
+      { path: 'clientes/configuracion/:id_cliente', component: ConfclienteComponent },
+      { path: 'productos', component: ProductosComponent },
+      { path: 'productos/configuracion/:id_producto', component: ConfproductoComponent }
+    ]
   },
   { path: '**', pathMatch: 'full',  component: PageNotFoundComponent },
 ]

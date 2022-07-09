@@ -1,0 +1,92 @@
+<div class="card">
+  <h1 class="title">Productos</h1>
+      <div class="card-body">
+          <form>
+            <div class="row">
+              <div class="col-md-4">
+                <h5>Nombre</h5>
+                <input class="color form-control" type="text" [(ngModel)]="nombre_producto" placeholder="Insertar el nombre del producto" name="nombre_producto">
+              </div>
+              <div class="col-md-4">
+                <h5>Categoria</h5>
+                <select class="form-select form-control" [(ngModel)]="id_categoria" name="categoria">
+                    <option *ngFor = "let categoria of categorias" value="{{categoria.id_categoria}}"> {{categoria.nombre_categoria}}</option>
+                </select>
+              </div>
+              <div class="col-md-4">
+                <h5>Marcas</h5>
+                <select class="form-select form-control" [(ngModel)]="id_marca" name="marca">
+                    <option *ngFor = "let marca of marcas" value="{{marca.id_marca}}"> {{marca.nombre_marca}}</option>
+                </select>
+              </div>
+            </div><h6></h6>
+            <div class="row">
+              <div class="col-md-4">
+                <h5>Descripcion </h5>
+                <input class="color form-control" type="text" placeholder="Inserte una descripcion" [(ngModel)]="descripcion" name="descripcion">
+              </div>
+              <div class="col-md-4">
+                <h5> Stock </h5>
+                <input class="color form-control" type="text" placeholder="Debe insertar un stock inicial" [(ngModel)]="stock" name="stock">
+              </div>
+              <div class="col-md-4">
+                <h5> Precio de Venta </h5>
+                <input class="color form-control" type="text" placeholder="Inserte el precio de venta" [(ngModel)]="precio_venta" name="precio_venta">
+              </div>
+            </div><h6></h6>
+            <div class="row">
+              <div class="col-md-4">
+                <h6></h6><h5> Precio de descuento </h5>
+                <input class="color form-control" type="text" placeholder="Inserte el precio de descuento" [(ngModel)]="precio_descuento" name="precio_descuento">
+              </div>
+            </div><h6></h6>
+            <button type="button" (click)="insertproducto()">
+                  <span></span>
+                  <span></span>
+                  <span></span>
+                  <span></span>
+                  Agregar Producto
+            </button>
+          </form>
+      </div>
+</div>
+
+<div class="card">
+  <h2 class="title"> Lista de productos </h2>
+  <div class="card-body">
+      <div class="tamaño-table">
+      <table class="table table-dark table-striped">
+          <thead>
+              <tr>
+                  <th scope="col"> ID </th>
+                  <th scope="col"> Nombre </th>
+                  <th scope="col"> Categoria </th>
+                  <th scope="col"> Marca </th>
+                  <th scope="col"> Descripcion </th>
+                  <th scope="col"> Stock </th>
+                  <th scope="col"> Precio de venta </th>
+                  <th scope="col"> Precio de descuento </th>
+                  <th scope="col">Acciones</th>
+              </tr>
+          </thead>
+          <tbody>
+              <tr *ngFor = "let producto of productos">
+                  <td WIDTH="80"> {{producto.id_producto}} </td>
+                  <td WIDTH="550"> {{producto.nombre_producto}} </td>
+                  <td WIDTH="350"> {{producto.nombre_categoria}} </td>
+                  <td WIDTH="350"> {{producto.nombre_marca}} </td>
+                  <td WIDTH="350"> {{producto.descripcion}} </td>
+                  <td WIDTH="350"> {{producto.stock}} </td>
+                  <td WIDTH="350"> {{producto.precio_venta}} </td>
+                  <td WIDTH="350"> {{producto.precio_descuento}} </td>
+                  <td WIDTH="350">
+                      <ul>
+                          <li class="fas fa-edit" [routerLink]="['/home/productos/configuracion/', producto.id_producto]"></li>
+                      </ul>
+                  </td>
+              </tr>
+          </tbody>
+      </table>
+      </div>
+  </div>
+</div>

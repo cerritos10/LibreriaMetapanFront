@@ -98,4 +98,25 @@ export class RestServiceService {
   {
     return this.http.delete(this.URL + 'clientes/' + id);
   }
+
+  //Productos
+  public getProductos(){
+    return this.http.get(this.URL + 'productos/');
+  }
+
+  public getProducto(id){
+    return this.http.get(this.URL + 'productos/' + id);
+  }
+
+  public postProducto(data){
+    return this.http.post(this.URL + 'productos/', data);
+  }
+
+  public putProducto(data, id){
+    return this.http.put(this.URL + 'productos/' + id, data);
+  }
+
+  public deleteProducto(id){
+    return this.http.delete(this.URL + 'productos/' + id);
+  }
 }
