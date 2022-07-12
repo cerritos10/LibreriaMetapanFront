@@ -1,3 +1,4 @@
+import { ProveedorComponent } from './modules/proveedor/proveedor.component';
 import { ConfiRolesComponent } from './modules/roles/confi-roles/confi-roles.component';
 import { PageNotFoundComponent } from './page-not-found/page-not-found.component';
 import { ViewComponent } from './dashboard/view/view.component';
@@ -32,7 +33,9 @@ const routes: Routes = [
       { path: 'marcas', component: MarcaComponent },
       { path: 'marcas/configuracion/:id_marca', component: ConfmarcasComponent },
       { path: 'clientes', pathMatch: 'full',  component: ClientesComponent },
-      { path: 'clientes/configuracion/:id_cliente', component: ConfclienteComponent }
+      { path: 'clientes/configuracion/:id_cliente', component: ConfclienteComponent },
+      { path: 'proveedores', pathMatch: 'full',  component: ProveedorComponent },
+      { path: 'proveedores/configuracion/:id_proveedor', component: ConfclienteComponent },
     ]  
   },
   { path: '**', pathMatch: 'full',  component: PageNotFoundComponent },

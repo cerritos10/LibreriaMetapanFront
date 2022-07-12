@@ -31,6 +31,28 @@ export class RestServiceService {
     return this.http.delete(this.URL + 'roles/'+ id);
   }
 
+  //Proveedores
+  public getProveedores(id){
+    return this.http.get(this.URL + 'proveedores/' + id);
+  }
+
+  public getAllProveedores(){
+    return this.http.get(this.URL + 'proveedores/');
+  }
+
+  public postProveedores(data){
+    return this.http.post(this.URL + 'proveedores/', data);
+  }
+
+  public putproveedores(data, id){
+    return this.http.put(this.URL + 'proveedores/' + id, data);
+  }
+
+  public deleteProveedores(id){
+    return this.http.delete(this.URL + 'proveedores/'+ id);
+  }
+
+
 
   ///Categorias
   public getCategoria(id){

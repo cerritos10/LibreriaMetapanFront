@@ -24,4 +24,9 @@ export const navbarData = [
         icon: 'fas fa-user',
         label: 'Clientes'
     },
+    {
+        routeLink: 'proveedores',
+        icon: 'fas fa-user',
+        label: 'Proveedores'
+    },
 ];
