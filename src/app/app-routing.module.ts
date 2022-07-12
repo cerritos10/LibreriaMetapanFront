@@ -1,4 +1,6 @@
 import { ProveedorComponent } from './modules/proveedor/proveedor.component';
+import { ConfproductoComponent } from './modules/productos/confproducto/confproducto.component';
+import { ProductosComponent } from './modules/productos/productos.component';
 import { ConfiRolesComponent } from './modules/roles/confi-roles/confi-roles.component';
 import { PageNotFoundComponent } from './page-not-found/page-not-found.component';
 import { ViewComponent } from './dashboard/view/view.component';
@@ -36,7 +38,9 @@ const routes: Routes = [
       { path: 'clientes/configuracion/:id_cliente', component: ConfclienteComponent },
       { path: 'proveedores', pathMatch: 'full',  component: ProveedorComponent },
       { path: 'proveedores/configuracion/:id_proveedor', component: ConfclienteComponent },
-    ]  
+      { path: 'productos', component: ProductosComponent },
+      { path: 'productos/configuracion/:id_producto', component: ConfproductoComponent }
+    ]
   },
   { path: '**', pathMatch: 'full',  component: PageNotFoundComponent },
 ]

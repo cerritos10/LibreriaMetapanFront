@@ -20,6 +20,8 @@ import { PageNotFoundComponent } from './page-not-found/page-not-found.component
 import { ConfiRolesComponent } from './modules/roles/confi-roles/confi-roles.component';
 import { ProveedorComponent } from './modules/proveedor/proveedor.component';
 import { ConfiproveedorComponent } from './modules/proveedor/confiproveedor/confiproveedor.component';
+import { ProductosComponent } from './modules/productos/productos.component';
+import { ConfproductoComponent } from './modules/productos/confproducto/confproducto.component';
 
 @NgModule({
   declarations: [
@@ -38,7 +40,9 @@ import { ConfiproveedorComponent } from './modules/proveedor/confiproveedor/conf
     PageNotFoundComponent,
     ConfiRolesComponent,
     ProveedorComponent,
-    ConfiproveedorComponent
+    ConfiproveedorComponent,
+    ProductosComponent,
+    ConfproductoComponent
   ],
   imports: [
     BrowserModule,
