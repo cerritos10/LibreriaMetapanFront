@@ -22,6 +22,7 @@ import { ProveedorComponent } from './modules/proveedor/proveedor.component';
 import { ConfiproveedorComponent } from './modules/proveedor/confiproveedor/confiproveedor.component';
 import { ProductosComponent } from './modules/productos/productos.component';
 import { ConfproductoComponent } from './modules/productos/confproducto/confproducto.component';
+import { VentasComponent } from './modules/ventas/ventas.component';
 
 @NgModule({
   declarations: [
@@ -42,7 +43,8 @@ import { ConfproductoComponent } from './modules/productos/confproducto/confprod
     ProveedorComponent,
     ConfiproveedorComponent,
     ProductosComponent,
-    ConfproductoComponent
+    ConfproductoComponent,
+    VentasComponent
   ],
   imports: [
     BrowserModule,

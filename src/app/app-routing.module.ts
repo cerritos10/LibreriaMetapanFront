@@ -1,3 +1,4 @@
+import { VentasComponent } from './modules/ventas/ventas.component';
 import { ProveedorComponent } from './modules/proveedor/proveedor.component';
 import { ConfproductoComponent } from './modules/productos/confproducto/confproducto.component';
 import { ProductosComponent } from './modules/productos/productos.component';
@@ -39,7 +40,8 @@ const routes: Routes = [
       { path: 'proveedores', pathMatch: 'full',  component: ProveedorComponent },
       { path: 'proveedores/configuracion/:id_proveedor', component: ConfclienteComponent },
       { path: 'productos', component: ProductosComponent },
-      { path: 'productos/configuracion/:id_producto', component: ConfproductoComponent }
+      { path: 'productos/configuracion/:id_producto', component: ConfproductoComponent },
+      { path: 'ventas', component: VentasComponent }
     ]
   },
   { path: '**', pathMatch: 'full',  component: PageNotFoundComponent },
