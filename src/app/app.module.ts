@@ -1,3 +1,4 @@
+import { TokenInterceptorService } from './services/token-interceptor.service';
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 
@@ -9,7 +10,7 @@ import { AppRoutingModule } from './app-routing.module';
 import { RolesComponent } from './modules/roles/roles.component';
 import { CategoriasComponent } from './modules/categorias/categorias.component';
 import { FormsModule } from '@angular/forms';
-import { HttpClientModule } from '@angular/common/http';
+import { HttpClientModule, HttpInterceptor } from '@angular/common/http';
 import { ConfcategoriaComponent } from './modules/categorias/confcategoria/confcategoria.component';
 import { MarcaComponent } from './modules/marca/marca.component';
 import { ConfmarcasComponent } from './modules/marca/confmarcas/confmarcas.component';
@@ -23,6 +24,11 @@ import { ConfiproveedorComponent } from './modules/proveedor/confiproveedor/conf
 import { ProductosComponent } from './modules/productos/productos.component';
 import { ConfproductoComponent } from './modules/productos/confproducto/confproducto.component';
 import { VentasComponent } from './modules/ventas/ventas.component';
+import { LoginComponent } from './modules/login/login.component';
+
+//Prividers
+import { JwtHelperService, JWT_OPTIONS } from '@auth0/angular-jwt'
+import { HTTP_INTERCEPTORS } from '@angular/common/http';
 
 @NgModule({
   declarations: [
@@ -44,7 +50,8 @@ import { VentasComponent } from './modules/ventas/ventas.component';
     ConfiproveedorComponent,
     ProductosComponent,
     ConfproductoComponent,
-    VentasComponent
+    VentasComponent,
+    LoginComponent
   ],
   imports: [
     BrowserModule,
@@ -52,7 +59,13 @@ import { VentasComponent } from './modules/ventas/ventas.component';
     FormsModule,
     HttpClientModule
   ],
-  providers: [],
+  providers: [
+    //Permite decodificar y decodificar los token para comprobar si es valido el token
+    { provide: JWT_OPTIONS, useValue: JWT_OPTIONS},
+    JwtHelperService,
+    //Interceptor
+    { provide: HTTP_INTERCEPTORS, useClass: TokenInterceptorService, multi: true }
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

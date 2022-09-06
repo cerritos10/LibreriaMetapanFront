@@ -1,0 +1,39 @@
+.titleLogin{
+  padding: 5px;
+  margin-left: 10px;
+  text-align: center;
+}
+
+
+.tamaño-table{
+  width: 400px;
+}
+
+.logo {
+  height: 250px;
+  width: auto;
+  padding: 10px;
+  display: block;
+  margin: 0 auto;
+}
+
+.custom-form {
+  min-width: 300px;
+  max-width: 60%;
+  margin: 0px auto;
+  background: #121121;
+  padding: 2rem 3rem;
+  margin: auto;
+  border-radius: 2.5rem;
+  color: white;
+  margin-top: 5rem;
+}
+
+.custom-form input {
+  margin: 1rem 0;
+}
+
+.custom-form button {
+  text-align: center;
+  align-content: center;
+}

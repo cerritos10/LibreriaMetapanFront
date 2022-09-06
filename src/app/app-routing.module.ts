@@ -1,3 +1,7 @@
+import { RoleGuard } from './guards/role.guard';
+import { NotauthGuard } from './guards/notauth.guard';
+import { AuthGuard } from './guards/auth.guard';
+import { LoginComponent } from './modules/login/login.component';
 import { VentasComponent } from './modules/ventas/ventas.component';
 import { ProveedorComponent } from './modules/proveedor/proveedor.component';
 import { ConfproductoComponent } from './modules/productos/confproducto/confproducto.component';
@@ -16,7 +20,7 @@ import { SidenavComponent } from './dashboard/sidenav/sidenav.component';
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { DashComponent } from './dashboard/dash/dash.component';
-import { RouterModule, Routes } from '@angular/router';
+import { RouterModule, Routes, CanActivate } from '@angular/router';
 import { ConfclienteComponent } from './modules/clientes/confcliente/confcliente.component';
 
 const routes: Routes = [
@@ -25,11 +29,12 @@ const routes: Routes = [
     redirectTo:"home",
     pathMatch:"full",
   },
+  { path: 'login', component: LoginComponent, canActivate: [NotauthGuard] },
   {
     path:'home', component: ViewComponent,
     children: [
-      { path: 'dashboard', component: DashComponent },
-      { path: 'roles', component: RolesComponent},
+      { path: 'dashboard', component: DashComponent, canActivate: [AuthGuard] },
+      { path: 'roles', component: RolesComponent, canActivate: [AuthGuard, RoleGuard], data: { expectedRole: '1'}},
       { path: 'roles/configuracion/:id_tipousuario', component: ConfiRolesComponent },
       { path: 'categorias', component: CategoriasComponent },
       { path: 'categorias/configuracion/:id_categoria', component: ConfcategoriaComponent},

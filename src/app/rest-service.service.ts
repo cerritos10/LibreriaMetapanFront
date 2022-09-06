@@ -1,12 +1,13 @@
 import { Injectable } from '@angular/core';
 import {HttpClient} from '@angular/common/http';
+import { JwtHelperService } from '@auth0/angular-jwt';
 
 @Injectable({
   providedIn: 'root'
 })
 export class RestServiceService {
 
-  constructor(private http: HttpClient) { }
+  constructor(private http: HttpClient, private JwtHelper: JwtHelperService) { }
 
   URL = 'http://127.0.0.1:3000/api/'
 
@@ -141,4 +142,20 @@ export class RestServiceService {
   public deleteProducto(id){
     return this.http.delete(this.URL + 'productos/' + id);
   }
+
+  //Auth
+  public login(data){
+    return this.http.post(this.URL + 'users/login/', data);
+  }
+
+  ///npm install --save @auth0/angular-jwt
+  isAuth(): boolean{
+    const token = localStorage.getItem('token');
+    if(this.JwtHelper.isTokenExpired(token) || !localStorage.getItem('token')){
+      return false;
+    }else{
+      return true;
+    }
+  }
+
 }
