@@ -20,6 +20,7 @@ import { PageNotFoundComponent } from './page-not-found/page-not-found.component
 import { ConfiRolesComponent } from './modules/roles/confi-roles/confi-roles.component';
 import { ProductosComponent } from './modules/productos/productos.component';
 import { ConfproductoComponent } from './modules/productos/confproducto/confproducto.component';
+import { CompraComponent } from './modules/compra/compra.component';
 
 @NgModule({
   declarations: [
@@ -38,7 +39,8 @@ import { ConfproductoComponent } from './modules/productos/confproducto/confprod
     PageNotFoundComponent,
     ConfiRolesComponent,
     ProductosComponent,
-    ConfproductoComponent
+    ConfproductoComponent,
+    CompraComponent
   ],
   imports: [
     BrowserModule,

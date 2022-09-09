@@ -1,0 +1,121 @@
+<div class="container">
+    <!-- Content here -->
+    <form>
+        <div class="container">
+            <div class="row">
+                <div class="col boderTable">
+                    <p>Orden de compra</p>
+                    <p #Mydate>asdasd</p>
+                    <p>Id Compra</p>
+                    <p>Tipo de Compra</p>
+                </div>
+                <div class="col boderTable">
+                    <p>Usuario (Usuario General, nombre de la libreria)</p>
+                    <p>Proveedor</p>
+                    <div>
+                        <select class="form-select form-control" name="sexo">
+                            <option value="Parrot">Parrot</option>
+                            <option value="BIC">BIC</option>
+                        </select>
+                        <button type="button">
+                            <span></span>
+                            <span></span>
+                            <span></span>
+                            <span></span>
+                            Buscar Proveedor
+                        </button>
+                    </div>
+                </div>
+            </div>
+            <div class="row" >
+                <p>Detalle de la compra</p>
+                <div class="col boderTable">
+                    <p>Producto</p>
+                    <div>
+                        <select class="form-select form-control" [(ngModel)]="id_producto" name="producto">
+                            <option *ngFor = "let producto of productos" value="{{producto.id_producto}}">{{producto.nombre_producto}}</option>
+                        </select>
+                        <button type="button">
+                            <span></span>
+                            <span></span>
+                            <span></span>
+                            <span></span>
+                            Buscar Producto
+                        </button>
+                    </div>
+                </div>
+                <div class="col boderTable">
+                    <p>Cantidad</p>
+                    <input class="color form-control" type="text" name="Cantidad">
+                    <p>Precio Compra</p>
+                    <input class="color form-control" type="text" name="PrecioCompra">
+                </div>
+                <div class="col-2">
+                    <button type="button">
+                        <span></span>
+                        <span></span>
+                        <span></span>
+                        <span></span>
+                        Agregar a la compra
+                    </button>
+                </div>
+            </div>
+            <!--Tabla con el detalle de compra, se debe poder eliminar-->
+            <div class="row">
+                <div class="col boderTable">
+                    <div class="card">
+                        <h2 class="title"> Lista de clientes </h2>
+                        <div class="card-body">
+                            <div class="tamaño-table">
+                            <table class="table table-dark table-striped">
+                                <thead>
+                                    <tr>
+                                        <th scope="col"> Producto </th>
+                                        <th scope="col"> Cantidad </th>
+                                        <th scope="col"> Precio de compra </th>
+                                        <th scope="col">Acciones</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <td WIDTH="750"> Lapiz Rojo </td>
+                                        <td WIDTH="180">  35 </td>
+                                        <td WIDTH="350"> 0.14 </td>
+                                        <td WIDTH="350"> 
+                                            <ul> 
+                                                <li class="fas fa-trash-alt icons"> </li>
+                                            </ul>
+                                        </td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                            </div>
+                        </div>
+                    </div>                    
+                </div>
+            </div>
+            <!--Total de la compra-->
+            <div class="row boderTable">
+                <div class="col">
+                    <p>Total</p>
+                </div>
+                <div class="col">
+                    <button type="button">
+                        <span></span>
+                        <span></span>
+                        <span></span>
+                        <span></span>
+                        Guardar
+                    </button>
+                    <button type="button">
+                        <span></span>
+                        <span></span>
+                        <span></span>
+                        <span></span>
+                        Cancelar
+                    </button>
+                </div>
+            </div>
+        </div>
+    </form>
+</div>

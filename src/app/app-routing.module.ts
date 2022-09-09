@@ -16,6 +16,8 @@ import { CommonModule } from '@angular/common';
 import { DashComponent } from './dashboard/dash/dash.component';
 import { RouterModule, Routes } from '@angular/router';
 import { ConfclienteComponent } from './modules/clientes/confcliente/confcliente.component';
+import { CompraComponent } from './modules/compra/compra.component';
+
 
 const routes: Routes = [
   {
@@ -36,8 +38,9 @@ const routes: Routes = [
       { path: 'clientes', pathMatch: 'full',  component: ClientesComponent },
       { path: 'clientes/configuracion/:id_cliente', component: ConfclienteComponent },
       { path: 'productos', component: ProductosComponent },
-      { path: 'productos/configuracion/:id_producto', component: ConfproductoComponent }
-    ]
+      { path: 'productos/configuracion/:id_producto', component: ConfproductoComponent },
+      { path: 'compra', component: CompraComponent }
+    ]  
   },
   { path: '**', pathMatch: 'full',  component: PageNotFoundComponent },
 ]

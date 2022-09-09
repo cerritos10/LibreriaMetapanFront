@@ -1,0 +1,13 @@
+p{
+    color: #fff;
+}
+
+.boderTable{
+    border-style: solid;
+    border-width: 1px;
+    border-color: #fff;
+    border-radius: 7px;
+
+    margin: 10px;
+    padding: 10px;
+}
