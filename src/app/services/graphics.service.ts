@@ -13,4 +13,8 @@ export class GraphicsService {
   public Stock(path){
     return this.http.get(this.URL + path);
   }
+
+  public totalCompras(path, year){
+    return this.http.get(this.URL + path + year)
+  }
 }

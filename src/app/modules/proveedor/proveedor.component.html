@@ -1,0 +1,64 @@
+<div class="card">
+    <h2 class="title"> Ingresar un nuevo proveedor </h2>
+    <div class="card-body">
+        <form class="row g-3">
+            <div class="col-md-6">
+                <input type="text" class="color form-control" placeholder="Nombre" [(ngModel)]="nombre" name="nombre">
+            </div>
+            <div class="col-md-6">
+                <input type="text" class="color form-control" placeholder="Dirección" [(ngModel)]="direccion"
+                    name="direccion">
+            </div>
+            <div class="col-md-6">
+                <input type="text" class="color form-control" placeholder="Teléfono" [(ngModel)]="telefono"
+                    name="telefono">
+            </div>
+
+            <div class="col-12">
+                <button type="button" (click)="insertProveedor()">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                    Guardar
+                </button>
+            </div>
+
+        </form>
+    </div>
+</div>
+
+<div class="card">
+    <h2 class="title"> Lista de proveedores </h2>
+    <div class="card-body">
+        <div class="tamaño-table">
+            <table class="table table-dark table-striped">
+                <thead>
+                    <tr>
+                        <th scope="col"> ID </th>
+                        <th scope="col"> Nombre </th>
+                        <th scope="col"> Dirección</th>
+                        <th scope="col"> Teléfono</th>
+                        <th scope="col"> Acciones</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr *ngFor="let prov of proveedores">
+                        <td> {{prov.id_proveedor}} </td>
+                        <td> {{prov.nombre}} </td>
+                        <td> {{prov.direccion}} </td>
+                        <td> {{prov.telefono}} </td>
+                        <td>
+                            <ul>
+                                <li class="fas fa-trash-alt icons"
+                                    [routerLink]="['/home/proveedores/configuracion', prov.id_proveedor]"> </li>
+                                <li class="fas fa-edit"
+                                    [routerLink]="['/home/proveedores/configuracion', prov.id_proveedor]"> </li>
+                            </ul>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+</div>

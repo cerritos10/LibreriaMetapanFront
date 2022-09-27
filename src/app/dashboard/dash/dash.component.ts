@@ -11,6 +11,7 @@ import { Chart, registerables } from 'chart.js';
 export class DashComponent implements OnInit {
 
   mas = null;
+  totalCompras = null;
 
   public canvas: any;
   public canvas2: any;
@@ -30,7 +31,91 @@ export class DashComponent implements OnInit {
     // });
     this.graficaStock('grafStock/mas','grafStockMas');
     this.graficaStock('grafStock/menos','grafStockMenos');
+    this.grafTotalCompras('grafTotalCompras/')
     // this.grafColors();
+  }
+
+  grafTotalCompras(path){
+    var currentTime = new Date();
+    var year = currentTime.getFullYear()
+    this.restService.totalCompras(path, year).subscribe(data => {
+      this.totalCompras = data['data'];
+      console.log(data);
+    var gradientBarChartConfiguration: any = {
+      maintainAspectRatio: false,
+      legend: {
+        display: false
+      },
+      tooltips: {
+        backgroundColor: '#f5f5f5',
+        titleFontColor: '#333',
+        bodyFontColor: '#666',
+        bodySpacing: 4,
+        xPadding: 12,
+        mode: "nearest",
+        intersect: 0,
+        position: "nearest"
+      },
+      responsive: true,
+    };
+
+    this.canvas = document.getElementById('grafTotalCompras');
+    this.ctx = this.canvas.getContext("2d");
+    var gradientStroke = this.ctx.createLinearGradient(0, 230, 0, 50);
+    
+    gradientStroke.addColorStop(1, 'rgba(255, 99, 132,0.2)');
+    gradientStroke.addColorStop(0.4, 'rgba(255, 99, 132,0.0)');
+    gradientStroke.addColorStop(0, 'rgba(255, 99, 132,0)'); //blue colors
+
+      var labels = data['data'].map(function (e) {
+        if(e.mes === 1){  
+          return 'Enero'
+        }else if(e.mes === 2){
+          return 'Febrero'
+        }else if(e.mes === 3){
+          return 'Marzo'
+        }else if(e.mes === 4){
+          return 'Abril'
+        }else if(e.mes === 5){
+          return 'Mayo'
+        }else if(e.mes === 6){
+          return 'Junio'
+        }else if(e.mes === 7){
+          return 'Julio'
+        }else if(e.mes === 8){
+          return 'Agosto'
+        }else if(e.mes === 9){
+          return 'Septiembre'
+        }else if(e.mes === 10){
+          return 'Octubre'
+        }else if(e.mes === 11){
+          return 'Noviembre'
+        }else if(e.mes === 12){
+          return 'Diciembre'
+        }
+        return e.mes;
+      });
+
+      var cant = data['data'].map(function (e) {
+        return e.totalanio ;
+      });
+
+      this.myChartDataMas = new Chart(this.ctx, {
+        type: 'bar',
+        data: {
+          labels: labels,
+          datasets: [{
+            label: 'Total de Compras',
+            data: cant,
+            backgroundColor: gradientStroke,
+            hoverBackgroundColor: gradientStroke,
+            borderColor: 'rgba(255, 99, 132, 1)',
+            borderWidth: 1
+          }]
+        },
+        options: gradientBarChartConfiguration
+      });
+    });
   }
 
   grafColors(){

@@ -8,6 +8,10 @@
     font-family: 'Poppins', sans-serif;
 }
 
+.modal-backdrop {
+    display: none;    
+}
+
 body{
     position: relative;
     font-family: 'Poppins', sans-serif;
